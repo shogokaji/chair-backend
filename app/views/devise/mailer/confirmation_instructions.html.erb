@@ -1,0 +1,6 @@
+<p>こんにちは、<%= @resource.name%>さん！</p>
+
+<p>下記リンクのログインページからログインすることで、<br/>アカウント登録は完了となります。</p>
+
+<p><%= link_to "ログインページへ", confirmation_url(@resource, {confirmation_token: @token, config: message['client-config'].to_s, redirect_url: message['redirect-url']}).html_safe %></p>
+
