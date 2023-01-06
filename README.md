@@ -1,24 +1,32 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Chair
+疾患を持つ患者様向けの日記投稿SNSサービスです。  
+日記の投稿、コメントや、ユーザーの検索、フォロー、DM機能により、  
+似た境遇の患者様同士が交流を図り、支え合える繋がりを作ることを目指します。  
+  
+#### URL: https://web.chair-app.com  
+DM機能、コメント機能に制限はありますが、ゲストログインでお試しいただけます。
 
-Things you may want to cover:
+### 使用技術
+* バックエンド: Rails ( API mode ) + Nginx ( upstream puma-socket )   
+* フロントエンド: React ( create-react-app / MUI / react-hook-form / axios )
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### インフラ構成図  
+  
+### ER図 
+  
+### 実装機能一覧
+* 日記投稿、画像投稿機能  
+  * コメント機能  
+  * いいね機能    
+* メッセージ機能
+  * 既読判定機能  
+* 検索機能  
+  * 絞り込み/キーワード検索/ランキング検索  
+* 通知機能  
+* お問い合わせ機能  
+* ゲストログイン機能
+* 管理者画面  
+* Route53 による独自ドメイン + SSL化
+* レスポンシブ対応
+* 本番環境のコンテナ化
