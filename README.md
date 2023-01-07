@@ -2,7 +2,9 @@
 # Chair
 疾患を持つ患者様向けの日記投稿SNSサービスです。  
 日記の投稿、コメントや、ユーザーの検索、フォロー、DM機能により、  
-似た境遇の患者様同士が交流を図り、支え合える繋がりを作ることを目指します。  
+似た境遇の患者様同士が交流を図り、支え合える繋がりを作ることを目指します。
+  
+<img width="60%" height="60%" src="https://user-images.githubusercontent.com/98445266/211117974-8bfad69b-3611-4b96-a41c-95227cb3904b.png">
   
 #### URL: https://web.chair-app.com  
 DM機能、コメント機能に制限はありますが、ゲストログインでお試しいただけます。
@@ -12,8 +14,7 @@ DM機能、コメント機能に制限はありますが、ゲストログイン
 * フロントエンド: React ( create-react-app / MUI / react-hook-form / axios )
 
 ### インフラ構成図  
-  
-### ER図 
+<img width="60%" height="60%" src="https://user-images.githubusercontent.com/98445266/211118652-fcb70cc8-c107-400c-b2f5-6423d496a79a.png">
   
 ### 実装機能一覧
 * 日記投稿、画像投稿機能  
