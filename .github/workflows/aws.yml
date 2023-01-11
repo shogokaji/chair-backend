@@ -45,9 +45,9 @@ jobs:
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+        docker build --no-cache --platform linux/amd64 -t chair_rails .
+        docker tag chair_rails:latest 951463437886.dkr.ecr.ap-northeast-1.amazonaws.com/chair_rails:latest
+        docker push 951463437886.dkr.ecr.ap-northeast-1.amazonaws.com/chair_rails:latest
 
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
