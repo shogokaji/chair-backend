@@ -48,6 +48,7 @@ jobs:
         docker build --no-cache --platform linux/amd64 -t chair_rails .
         docker tag chair_rails:latest 951463437886.dkr.ecr.ap-northeast-1.amazonaws.com/chair_rails:latest
         docker push 951463437886.dkr.ecr.ap-northeast-1.amazonaws.com/chair_rails:latest
+        echo "image=951463437886.dkr.ecr.ap-northeast-1.amazonaws.com/chair_rails:latest" >> $GITHUB_OUTPUT
 
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
