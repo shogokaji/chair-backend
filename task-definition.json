@@ -28,10 +28,6 @@
         {
           "name": "DB_DATABASE",
           "value": "myapp"
-        },
-        {
-          "name": "***REMOVED***",
-          "value": "***REMOVED***"
         }
       ],
       "essential": true,
