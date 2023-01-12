@@ -14,7 +14,7 @@ DM機能、コメント機能に制限はありますが、ゲストログイン
 * フロントエンド: React ( create-react-app / MUI / react-hook-form / axios )
 
 ### インフラ構成図  
-<img width="60%" height="60%" src="https://user-images.githubusercontent.com/98445266/211118652-fcb70cc8-c107-400c-b2f5-6423d496a79a.png">
+<img width="60%" height="60%" src="https://user-images.githubusercontent.com/98445266/211978037-2385fda2-d9f9-4513-b66b-dc5d0891522f.png">
   
 ### 実装機能一覧
 * 日記投稿、画像投稿機能  
