@@ -12,6 +12,7 @@ DM機能、コメント機能に制限はありますが、ゲストログイン
 ### 使用技術
 * バックエンド: Rails ( API mode ) + Nginx ( upstream puma-socket )   
 * フロントエンド: React ( create-react-app / MUI / react-hook-form / axios )
+* インフラ: AWS(ECS / ECR / Route53 / S3 / CloudFront / CloudWatch / ELB / RDS) CI/CD環境構築(Github Actions)
 
 ### インフラ構成図  
 <img width="60%" height="60%" src="https://user-images.githubusercontent.com/98445266/211979262-faa48ed2-ce83-49db-8382-8977f5f01995.png">
