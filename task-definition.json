@@ -64,6 +64,16 @@
           "awslogs-stream-prefix": "ecs"
         }
       },
+      "secrets": [
+        {
+          "name": "DB_PASSWORD",
+          "valueFrom": "arn:aws:ssm:ap-northeast-1:951463437886:parameter/awsDB_PASSWORD"
+        },
+        {
+          "name": "MASTER_KEY",
+          "valueFrom": "arn:aws:ssm:ap-northeast-1:951463437886:parameter/awsMASTER_KEY"
+        }
+      ],
       "mountPoints": [],
       "name": "chair_nginx",
       "portMappings": [
