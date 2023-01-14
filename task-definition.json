@@ -70,7 +70,7 @@
           "valueFrom": "arn:aws:ssm:ap-northeast-1:951463437886:parameter/awsDB_PASSWORD"
         },
         {
-          "name": "MASTER_KEY",
+          "name": "RAILS_MASTER_KEY",
           "valueFrom": "arn:aws:ssm:ap-northeast-1:951463437886:parameter/awsMASTER_KEY"
         }
       ],
