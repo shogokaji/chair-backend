@@ -16,7 +16,7 @@ class Api::V1::CommentsController < ApplicationController
     }
     commentData = []
     comments.each do |comment|
-      data << {
+      data = {
         comment: comment,
         user: comment.user
       }
