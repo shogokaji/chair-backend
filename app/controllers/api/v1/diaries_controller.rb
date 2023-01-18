@@ -4,7 +4,7 @@ class Api::V1::DiariesController < ApplicationController
 
   def index
     diaries=[]
-    diariesList = Diary.where.not(user_id: current_api_v1_user.id).where(publish: true).order(created_at: :DESC)
+    diariesList = Diary.not_owned(current_api_v1_user).published.order(created_at: :DESC)
     diariesList.each do |diary|
       likes = []
       diary.likes.each do |like|
@@ -81,7 +81,7 @@ def relational_diaries
 end
 
   def search
-    diariesList = Diary.search_key_word(diary_params[:key_word]).where.not(user_id: current_api_v1_user.id).where(publish: true)
+    diariesList = Diary.search_key_word(diary_params[:key_word]).not_owned(current_api_v1_user).published
     diaries=[]
     diariesList.each do |diary|
       likes = []
@@ -101,11 +101,11 @@ end
 
   
   def sort
-    publicDiaries = Diary.where(publish: true)
+    publicDiaries = Diary.published
     if diary_params[:sort] == "like" 
-      diariesList = publicDiaries.find(Like.group(:diary_id).order('count(diary_id) desc').pluck(:diary_id))
+      diariesList = publicDiaries.where(id:[Like.liked_diaries])
     elsif diary_params[:sort] == "comment"
-      diariesList = publicDiaries.find(Comment.group(:diary_id).order('count(diary_id) desc').pluck(:diary_id))
+      diariesList = publicDiaries.where(id:[Comment.commented_diaries])
     elsif diary_params[:sort] == "day"
       diariesList = publicDiaries.where(created_at: Time.zone.now.all_day)
     end

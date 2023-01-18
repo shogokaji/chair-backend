@@ -20,7 +20,6 @@ class Api::V1::RoomsController < ApplicationController
   partner_entry = Entry.where(user_id: @partner.id)
   # 比較相手が自身ではないことを担保
   if current_api_v1_user.id != @partner.id
-
    # 自身のentry一覧のroom_idを相手のentryのroom_idと比較
     own_entry.each do |own|
      partner_entry.each do |partner|

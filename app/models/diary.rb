@@ -43,8 +43,12 @@ class Diary < ApplicationRecord
      ).order("created_at DESC")if key_word.present?
     }
 
-  scope :search_department, ->(department){
-    joins(:user).select("diaries.*,users.department").where(department: department) if department.present?
+  scope :not_owned, ->(user){
+    where.not(user_id: user.id)
   }
-  
+
+  scope :published, ->(){
+    where(publish: true)
+  }
+
 end
