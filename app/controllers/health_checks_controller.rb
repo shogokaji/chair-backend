@@ -1,5 +1,5 @@
 class HealthChecksController < ApplicationController
- def index
-  head :ok
- end
+  def index
+    head :ok
+  end
 end

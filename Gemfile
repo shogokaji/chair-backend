@@ -13,26 +13,26 @@ gem 'puma', '~> 5.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'hirb'
-  gem 'hirb-unicode'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
   gem 'listen', '~> 3.3'
+  gem 'rubocop', require: false
+  gem 'rubocop-rails'
   gem 'spring'
 end
 
-group :production do 
+group :production do
   gem 'fog-aws'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem 'net-smtp'
 gem 'net-imap'
 gem 'net-pop'
+gem 'net-smtp'
 
 # .envファイル使用
 gem 'dotenv-rails'
@@ -40,7 +40,7 @@ gem 'dotenv-rails'
 # Devise
 gem 'devise_token_auth'
 
-#メッセージの日本語化
+# メッセージの日本語化
 gem 'devise-i18n'
 
 # フロントとの接続設定
@@ -48,5 +48,3 @@ gem 'rack-cors'
 
 # 画像投稿
 gem 'carrierwave'
-
-

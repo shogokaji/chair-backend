@@ -1,33 +1,31 @@
 class Api::V1::NotificationsController < ApplicationController
+  after_action :notifications_checked, only: %i[index]
 
-  after_action :notifications_checked, only: %i[ index ]
+  def index
+    @notifications = current_api_v1_user.passive_notifications
 
- def index
-   @notifications = current_api_v1_user.passive_notifications
-  
-   notifications = []
-   @notifications.each do |notification|
-    notifications << {
-      notification: notification,
-      user: User.find(notification.visitor_id)
-    }
-   end
-  
-    render json:{ status: 200, notifications: notifications}
+    notifications = []
+    @notifications.each do |notification|
+      notifications << {
+        notification:,
+        user: User.find(notification.visitor_id)
+      }
+    end
+
+    render json: { status: 200, notifications: }
   end
 
   def destroy
     notifications = Notification.where(visited_id: params[:id])
     notifications.destroy_all
-    render json:{ status: 200, notifications:[] }
+    render json: { status: 200, notifications: [] }
   end
 
-    private
+  private
 
-    def notifications_checked
-      @notifications.where(checked: false).each do |notification|
-        notification.update(checked: true)
-      end
+  def notifications_checked
+    @notifications.where(checked: false).each do |notification|
+      notification.update(checked: true)
     end
-
+  end
 end
